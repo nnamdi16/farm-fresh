@@ -29,3 +29,39 @@ exports.registerUser = async function (data) {
         throw  new Error(error)
     }
 }
+
+exports.authenticateUser = async function (data) {
+    try {
+        const {phoneNumber,password} = data;
+        const userInfo = await UserSchema.findOne({
+            phoneNumber:phoneNumber
+        });
+        if (!userInfo) {
+            return {
+                error: true,
+                message: `Invalid username or password`
+            }
+        }
+        const {password:dbPassword} = userInfo;
+        const comparePassword = userInfo.comparePassword(
+            password,dbPassword
+        );
+        if (!comparePassword) {
+            return {
+                error: true,
+                message: `Invalid username or password`
+            }
+        }
+        return {
+            error: false,
+            message:`Successfully logged in`
+        }
+        
+    } catch (error) {
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+    
+}
