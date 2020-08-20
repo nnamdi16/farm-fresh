@@ -44,6 +44,11 @@ const UserSchema = new Schema({
      return match;
  }
 
+ UserSchema.methods.comparePassword= function (password,hashedPassword) {
+     const match = bcrypt.compareSync(password,hashedPassword)
+     return match;
+ }
+
  model("User",UserSchema);
 
  module.exports = model("User");
