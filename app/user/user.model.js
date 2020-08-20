@@ -17,7 +17,14 @@ const UserSchema = new Schema({
     },
     phoneNumber: {
         type: String,
-        required: true
+        required: true,
+        validate: {
+            validator: function (type) {
+                return type.match(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/);
+            },
+            message:`Phone number doesn't match any India phone number format`
+        }
+        
     },
     role:{
         type: String
