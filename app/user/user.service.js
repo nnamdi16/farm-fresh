@@ -1,4 +1,5 @@
 const UserSchema = require('./user.model');
+const sendSMS = require('../sms/twilio.service');
 
 
 exports.registerUser = async function (data) {
@@ -8,10 +9,10 @@ exports.registerUser = async function (data) {
             firstName,
             lastName,
             phoneNumber
-        })
+        });
         const checkExistingUser = await UserSchema.exists({
             phoneNumber
-        })
+        });
 
         if (checkExistingUser) {
             return {
@@ -22,6 +23,9 @@ exports.registerUser = async function (data) {
         createUser.setPassword(password);
         console.log(createUser);
         await createUser.save();
+        const verificationMessage = `Welcome to Kisankranti, Your verification code is 57866`;
+        console.log(phoneNumber);
+        sendSMS(phoneNumber,verificationMessage);
         return {
             error: false,
             message: `${firstName} successfully created`
