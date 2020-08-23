@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="authenticateUser"><span class="type-signature">(route) </span>authenticateUser<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type"><a href="https://kisankranti.herokuapp.com/">https://kisankranti.herokuapp.com/</a></td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/apiv1/login</td>
+                            </tr>
+                            </table>
+                            This function authenticate and allows auser to be logged in .
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">req</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">request parameters</td>
+          </tr><tr>
+            <td class="name">req.phoneNumber</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Phone number of the User</td>
+          </tr><tr>
+            <td class="name">req.password</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Password of the User</td>
+          </tr><tr>
+            <td class="name">res</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">response parameters</td>
+          </tr><tr>
+            <td class="name">res.success</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">The state of the response, either true or false</td>
+          </tr><tr>
+            <td class="name">res.message</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">A short message giving more information about the response.</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">request parameters
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>phoneNumber</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Phone number of the User</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Password of the User</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">response parameters
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The state of the response, either true or false</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A short message giving more information about the response.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="user.controller.js.html">user.controller.js</a>, <a href="user.controller.js.html#line63">line 63</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="registerUser"><span class="type-signature">(route) </span>registerUser<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type"><a href="https://kisankranti.herokuapp.com/">https://kisankranti.herokuapp.com/</a></td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/apiv1/register</td>
+                            </tr>
+                            </table>
+                            This function creates a new user.
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">req</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">request parameters</td>
+          </tr><tr>
+            <td class="name">req.firstName</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Firstname of the User</td>
+          </tr><tr>
+            <td class="name">req.lastName</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Lastname of the User</td>
+          </tr><tr>
+            <td class="name">req.phoneNumber</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Phone number of the User</td>
+          </tr><tr>
+            <td class="name">req.password</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Password of the User</td>
+          </tr><tr>
+            <td class="name">res</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">response parameters</td>
+          </tr><tr>
+            <td class="name">res.success</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">The state of the response, either true or false</td>
+          </tr><tr>
+            <td class="name">res.message</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">A short message giving more information about the response.</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">request parameters
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>firstName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Firstname of the User</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lastName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Lastname of the User</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>phoneNumber</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Phone number of the User</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Password of the User</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">response parameters
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The state of the response, either true or false</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A short message giving more information about the response.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="user.controller.js.html">user.controller.js</a>, <a href="user.controller.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html">authenticateUser</a></li><li><a href="global.html">registerUser</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Sat Aug 22 2020 22:27:35 GMT+0100 (West Africa Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
