@@ -1,5 +1,29 @@
 const {registerUser,authenticateUser} = require("./user.service");
 
+/**
+ *This function creates a new user.
+ * @name registerUser
+ * 
+ * @path {POST} /apiv1/register
+ * 
+ * 
+ * @function
+ * 
+ * @param {Object}  req             request parameters
+ * @param {String}  req.firstName   Firstname of the User
+ * @param {String}  req.lastName    Lastname of the User
+ * @param {String}  req.phoneNumber Phone number of the User
+ * @param {String}  req.password    Password of the User
+ * 
+ * @param {Object}  res             response parameters
+ * @param {String}  res.success     The state of the response, either true or false
+ * @param {String}  res.message     A short message giving more information about the response.
+ * 
+ * @chain {@link https://kisankranti.herokuapp.com/}
+ * 
+ * 
+ */
+
 exports.registerUser = async(req,res) => {
     try {
         res.set("Content-Type", "application/json");
@@ -35,6 +59,28 @@ exports.registerUser = async(req,res) => {
     }
 }
 
+
+/**
+ *This function authenticate and allows auser to be logged in .
+ * @name authenticateUser
+ * 
+ * @path {POST} /apiv1/login
+ * 
+ * 
+ * @function
+ * 
+ * @param {Object}  req             request parameters
+ * @param {String}  req.phoneNumber Phone number of the User
+ * @param {String}  req.password    Password of the User
+ * 
+ * @param {Object}  res             response parameters
+ * @param {String}  res.success     The state of the response, either true or false
+ * @param {String}  res.message     A short message giving more information about the response.
+ * 
+ * @chain {@link https://kisankranti.herokuapp.com/}
+ * 
+ * 
+ */
 exports.authenticateUser = async(req,res) => {
     try {
         res.set("Content-Type", "application/json");
