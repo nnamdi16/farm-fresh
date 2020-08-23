@@ -1,5 +1,6 @@
 const UserSchema = require('./user.model');
 
+
 exports.registerUser = async function (data) {
     try {
         const {firstName,lastName,phoneNumber,password} = data;
@@ -29,6 +30,7 @@ exports.registerUser = async function (data) {
         throw  new Error(error)
     }
 }
+
 
 exports.authenticateUser = async function (data) {
     try {
