@@ -1,4 +1,4 @@
-const ProcessTypeSchema = require('./process.model');
+const ProcessTypeSchema = require('./processType.model');
 
 
 exports.createProcessType = async function (data) {
