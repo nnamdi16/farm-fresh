@@ -7,3 +7,5 @@ const {createProcessType} = ProcessTypeController;
  * @path {POST} /processType/create
  */
 router.route('/create').post(createProcessType);
+
+module.exports =  router;
