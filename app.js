@@ -6,6 +6,7 @@ require("dotenv").config();
 var indexRouter = require("./index");
 const userRouter = require('./app/user/user.route');
 const processTypeRouter = require('./app/processType/processType.route');
+const productRouter = require('./app/product/product.route');
 // var apiRouter = require("./routes/api");
 // var apiResponse = require("./helpers/apiResponse");
 var cors = require("cors");
@@ -46,6 +47,7 @@ app.use(cors());
 app.use("/", indexRouter);
 app.use('/apiv1',userRouter);
 app.use('/processType',processTypeRouter);
+app.use('/product', productRouter)
 // app.use("/api/", apiRouter);
 
 // throw 404 if URL not found
