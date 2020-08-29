@@ -31,7 +31,7 @@ exports.registerUser = async function (data) {
             message: `${firstName} successfully created`
         }
     } catch (error) {
-        throw  new Error(error)
+        throw  new Error(error);
     }
 }
 
