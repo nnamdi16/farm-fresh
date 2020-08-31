@@ -17,7 +17,7 @@ const {registerUser,authenticateUser} = require("./user.service");
  * @param {String}  req.password    Password of the User
  * 
  * @param {Object}  res             response parameters
- * @param {String}  res.success     The state of the response, either true or false
+ * @param {Boolean}  res.success     The state of the response, either true or false
  * @param {String}  res.message     A short message giving more information about the response.
  * 
  * @chain {@link https://kisankranti.herokuapp.com/}
@@ -75,9 +75,10 @@ exports.registerUser = async(req,res) => {
  * @param {String}  req.phoneNumber Phone number of the User
  * @param {String}  req.password    Password of the User
  * 
- * @param {Object}  res             response parameters
- * @param {String}  res.success     The state of the response, either true or false
- * @param {String}  res.message     A short message giving more information about the response.
+ * @param {Object}   res             response parameters
+ * @param {Boolean}  res.success     The state of the response, either true or false
+ * @param {Boolean}  res.auth        The state of the authentication
+ * @param {String}   res.message     A short message giving more information about the response.
  * 
  * @chain {@link https://kisankranti.herokuapp.com/}
  * 
