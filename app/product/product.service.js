@@ -36,8 +36,7 @@ exports.createProduct = async function (data) {
         /**
          * Check trhe list of product registered by the user
          * Check if the product to be added already exist. If yes, update the product
-         * If no, add a new product.
-         * @todo
+         * @todo If no, add a new product.
          */
         // const checkexistingProduct = await ProductSchema.find({sellerId,productTitle:productTitle.toLowerCase()}).exec();
         await createProduct.save();
