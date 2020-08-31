@@ -1,7 +1,14 @@
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
+const { request } = require('chai');
 dotenv.config();
 
+/**
+ * @name authenticationToken    to verify token
+ * @param {Request} req         Header info - Token
+ * @param {Response} res        Response 
+ * @param {Next} next           Middleware to call the next function
+ */
 exports.authenticateToken = (req,res,next) => {
     //Fetch the jwt access token from the request header
 
@@ -39,8 +46,29 @@ exports.authenticateToken = (req,res,next) => {
  }
 }
 
-
+/**
+ * @name generateAccessToken - For Generating access token
+ * @param {String} userId User's Id
+ */
 
 exports.generateAccessToken =(userId)=> {
-    return jwt.sign({userId},process.env.TOKEN_SECRET, {expiresIn:'60s'})
+    return jwt.sign({userId},process.env.TOKEN_SECRET, {expiresIn:'60s'});
+}
+
+/**
+ * @name authCode           - Generates verification code
+ * @param {Number} length  - Determines the verification length
+ */
+exports.authCode = (length=5) => {
+    return Math.random().toString(36).substring(2,length);
+}
+
+
+/**
+ * @name hasSameBrowser     Checks whether the user is logging with a different browser by comparing the 'User-Agent' header of the incoming request with the string saved in the user's profile array
+ * @param {Object} request request object
+ * @param {Object} browser browser object
+ */
+exports.hasSameBrowser = (request,browser) => {
+    return browser.includes(request.header('User-Agent'))
 }
