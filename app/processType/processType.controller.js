@@ -26,12 +26,13 @@ exports.createProcessType = async(req,res) => {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
         const requestParameters = req.body;
-        const proecssDetails = await registerUser(requestParameters);
-        if (proecssDetails.error) {
+        const processDetails = await createProcessType(requestParameters);
+        const {error,message} = processDetails;
+        if (processDetails.error) {
             return res.status(200).json(
                 {
-                    success: false,
-                    message: userDetails.message
+                    success: error,
+                    message
                 }
             )
             
@@ -39,7 +40,7 @@ exports.createProcessType = async(req,res) => {
         const {
             error,
             message
-        } = proecssDetails;
+        } = prcessDetails;
         res.status(200).send({
             error,
             message
