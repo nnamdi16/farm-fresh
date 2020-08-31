@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "test": "nyc _mocha --timeout 10000 --exit --report lcovonly -- -R spec",
-    "lint": "eslint --fix --config .eslintrc.json \"**/*.js\""
+    "lint": "eslint --fix --config .eslintrc.json \"**/*.js\"",
+    "doc": "jsdoc -d docs --configure jsdoc.conf app.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -36,6 +37,6 @@
     "mocha": "^6.2.2",
     "nodemon": "^1.19.4",
     "nyc": "^14.1.1"
-  },
-  "doc": "jsdoc -d docs --configure jdoc.conf app.js"
+  }
+  
 }
