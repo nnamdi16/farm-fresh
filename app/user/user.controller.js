@@ -1,5 +1,6 @@
 const {registerUser,authenticateUser} = require("./user.service");
 
+
 /**
  *This function creates a new user.
  * @name registerUser
@@ -88,28 +89,56 @@ exports.authenticateUser = async(req,res) => {
         res.set("Accept", "application/json");
         const requestParameters = req.body;
         const authInfo = await authenticateUser(requestParameters);
-        if (authInfo.error) {
-            return res.status(200).json(
+        const {
+            error,
+            message,
+            token
+        } = authInfo;
+
+        if (error) {
+            return res.status(404).json(
                 {
-                    success: false,
-                    message: authInfo.message
+                    auth: false,
+                    success: error,
+                    message
                 }
             )
             
         }
-        const {
-            error,
-            message
-        } = authInfo;
         res.status(200).send({
+            auth:true,
             error,
-            message
+            message,
+            token
         });
 
 
     } catch (error) {
         res.status(500).json(
             {
+                auth:false,
+                success: false,
+                message: error.message
+            }
+        )
+    }
+}
+
+
+exports.logoutUser = async(req,res) => {
+    try {
+        res.set("Content-Type", "application/json");
+        res.set("Accept", "application/json");
+        res.status(200).send({
+            auth:false,
+            token:null
+        });
+
+
+    } catch (error) {
+        res.status(500).json(
+            {
+                auth:false,
                 success: false,
                 message: error.message
             }
