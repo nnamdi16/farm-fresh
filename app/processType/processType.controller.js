@@ -13,9 +13,9 @@ const {createProcessType} = require('./processType.service');
  * @param {String}  req.processTypeId   Process Type name
  * @param {String}  req.description     Description of the process type
  * 
- * @param {Object}  res                 response parameters
+ * @param {Object}   res                 response parameters
  * @param {Boolean}  res.success         The state of the response, either true or false
- * @param {String}  res.message         A short message giving more information about the response.
+ * @param {String}   res.message         A short message giving more information about the response.
  * 
  * @chain {@link https://kisankranti.herokuapp.com/}
  * 
@@ -28,7 +28,7 @@ exports.createProcessType = async(req,res) => {
         const requestParameters = req.body;
         const processDetails = await createProcessType(requestParameters);
         const {error,message} = processDetails;
-        if (processDetails.error) {
+        if (error) {
             return res.status(200).json(
                 {
                     success: error,
@@ -37,10 +37,6 @@ exports.createProcessType = async(req,res) => {
             )
             
         }
-        const {
-            error,
-            message
-        } = prcessDetails;
         res.status(200).send({
             error,
             message
