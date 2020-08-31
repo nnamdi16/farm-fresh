@@ -1,6 +1,30 @@
 const {createProduct,updateProduct,getAllProducts} = require('./product.service');
 
 
+/**
+ *This function creates a new product .
+ * @name createProduct
+ * 
+ * @path {POST} /product/create
+ * 
+ * 
+ * @function
+ * 
+ * @param {Object}  req                      request parameters
+ * @param {String}  req.productTitle         Phone number of the User
+ * @param {String}  req.quantityAvailable    Quantity of the product available
+ * @param {String}  req.photoUpload          Password of the User
+ * @param {String}  req.quantityAvailable    Password of the User
+ * 
+ * @param {Object}   res             response parameters
+ * @param {Boolean}  res.success     The state of the response, either true or false
+ * @param {Boolean}  res.auth        The state of the authentication
+ * @param {String}   res.message     A short message giving more information about the response.
+ * 
+ * @chain {@link https://kisankranti.herokuapp.com/}
+ * 
+ * 
+ */
 exports.createProduct = async(req,res) => {
     try {
         res.set("Content-Type", "application/json");
