@@ -1,4 +1,4 @@
-const {createProduct,updateProduct,getAllProducts} = require('./product.service');
+const {createProduct,updateProduct,getSellerProducts} = require('./product.service');
 
 
 /**
@@ -60,13 +60,13 @@ exports.createProduct = async(req,res) => {
     }
 }
 
-exports.getAllProducts = async(req,res) => {
+exports.getSellerProducts = async(req,res) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
         const requestParameters = req.body;
         
-        const productList = await getAllProducts(requestParameters);
+        const productList = await getSellerProducts(requestParameters);
         const {
             error,
             message
