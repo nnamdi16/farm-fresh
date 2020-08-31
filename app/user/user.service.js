@@ -1,5 +1,7 @@
 const UserSchema = require('./user.model');
 const sendSMS = require('../sms/twilio.service');
+const {generateAccessToken,authenticateToken} = require('../util/auth');
+const { jwt } = require('twilio');
 
 
 exports.registerUser = async function (data) {
@@ -21,10 +23,8 @@ exports.registerUser = async function (data) {
             };
         }
         createUser.setPassword(password);
-        console.log(createUser);
         await createUser.save();
         const verificationMessage = `Welcome to Kisankranti, Your verification code is 57866`;
-        console.log(phoneNumber);
         sendSMS(phoneNumber,verificationMessage);
         return {
             error: false,
@@ -48,7 +48,10 @@ exports.authenticateUser = async function (data) {
                 message: `Invalid username or password`
             }
         }
-        const {password:dbPassword} = userInfo;
+        const {
+            password:dbPassword,
+            _id:userId
+        } = userInfo;
         const comparePassword = userInfo.comparePassword(
             password,dbPassword
         );
@@ -58,9 +61,13 @@ exports.authenticateUser = async function (data) {
                 message: `Invalid username or password`
             }
         }
+
+        const token = generateAccessToken(userId);
+        console.log(token);
         return {
             error: false,
-            message:`Successfully logged in`
+            message:`Successfully logged in`,
+            token:token
         }
         
     } catch (error) {
