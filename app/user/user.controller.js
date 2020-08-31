@@ -33,7 +33,7 @@ exports.registerUser = async(req,res) => {
         const userDetails = await registerUser(requestParameters);
         const {
             error,
-            message
+            message,
         } = userDetails;
         if (error) {
             return res.status(200).json(
