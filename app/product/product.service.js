@@ -98,7 +98,7 @@ exports.updateProduct = async function (data) {
     }
 }
 
-exports.getAllProducts = async function (data) {
+exports.getSellerProducts = async function (data) {
  try {
     const {sellerId} = data;
 
