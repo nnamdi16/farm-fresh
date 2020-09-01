@@ -1,6 +1,6 @@
 const UserSchema = require('./user.model');
 const sendSMS = require('../sms/twilio.service');
-const {generateAccessToken,authenticateToken} = require('../util/auth');
+const {generateAccessToken,authenticateToken,authCode} = require('../util/auth');
 const { jwt } = require('twilio');
 
 
@@ -23,8 +23,9 @@ exports.registerUser = async function (data) {
             };
         }
         createUser.setPassword(password);
+        const verificationCode = authCode();
         await createUser.save();
-        const verificationMessage = `Welcome to Kisankranti, Your verification code is 57866`;
+        const verificationMessage = `Welcome to Kisankranti, Your verification code is ${verificationCode}`;
         sendSMS(phoneNumber,verificationMessage);
         return {
             error: false,
