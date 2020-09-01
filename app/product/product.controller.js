@@ -64,9 +64,8 @@ exports.getSellerProducts = async(req,res) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
-        const requestParameters = req.body;
-        
-        const productList = await getSellerProducts(requestParameters);
+        const{sellerId} = req.params
+        const productList = await getSellerProducts(sellerId);
         const {
             error,
             message
