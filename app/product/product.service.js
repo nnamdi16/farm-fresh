@@ -100,8 +100,7 @@ exports.updateProduct = async function (data) {
 
 exports.getSellerProducts = async function (data) {
  try {
-    const {sellerId} = data;
-
+     const sellerId = data
     const fetchAllProducts = await ProductSchema.find({sellerId}).exec();
     if (fetchAllProducts) {
         return {
@@ -118,3 +117,5 @@ exports.getSellerProducts = async function (data) {
      throw new Error(error);
  }
 }
+
+
