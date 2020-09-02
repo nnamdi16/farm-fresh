@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
-const { request } = require('chai');
 dotenv.config();
 
 /**
