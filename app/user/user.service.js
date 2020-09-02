@@ -1,7 +1,11 @@
 const UserSchema = require('./user.model');
 const {sendSMS} = require('../sms/twilio.service');
 const {generateAccessToken,authenticateToken,authCode} = require('../util/auth');
-const { jwt } = require('twilio');
+const dotenv = require('dotenv');
+const { totp } = require('otplib');
+dotenv.config();
+// const authy = require('authy')(process.env.AUTHY_API_KEY);
+
 
 
 exports.registerUser = async function (data) {
@@ -22,14 +26,15 @@ exports.registerUser = async function (data) {
                 message:'Customer already exist'
             };
         }
+        
+        const token = totp.generate(process.env.TOKEN_SECRET);
         createUser.setPassword(password);
-        const verificationCode = authCode();
         await createUser.save();
-        const verificationMessage = `Welcome to Kisankranti, Your verification code is ${verificationCode}`;
+        const verificationMessage = `Welcome to Kisankranti, Your verification code is ${token}`;
         sendSMS(phoneNumber,verificationMessage);
         return {
             error: false,
-            message: `${firstName} successfully created`
+            message: `${firstName} successfully created ${token}`
         }
     } catch (error) {
         throw  new Error(error);
