@@ -54,8 +54,8 @@ exports.registerUser = async(req,res) => {
     } catch (error) {
         res.status(500).json(
             {
-                success: error,
-                message
+                success: false,
+                message:error.message
             }
         )
     }
