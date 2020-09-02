@@ -1,5 +1,5 @@
 const UserSchema = require('./user.model');
-const sendSMS = require('../sms/twilio.service');
+const {sendSMS} = require('../sms/twilio.service');
 const {generateAccessToken,authenticateToken,authCode} = require('../util/auth');
 const { jwt } = require('twilio');
 
