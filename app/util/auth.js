@@ -63,7 +63,7 @@ exports.authCode = (length=5) => {
     return Math.random().toString(36).substring(2,length);
 }
 
-
+console.log(this.authCode());
 /**
  * @name hasSameBrowser     Checks whether the user is logging with a different browser by comparing the 'User-Agent' header of the incoming request with the string saved in the user's profile array
  * @param {Object} request request object
