@@ -12,6 +12,9 @@ const {createProcess} = require('./process.service');
  * @param {Object}  req                 request parameters
  * @param {String}  req.processTypeId   Process Type name
  * @param {String}  req.description     Description of the process type
+ * @param {String}  req.createdBy       Name of the person who created the process
+ * @param {String}  req.updatedBy       Name of the person who updated the process
+ * @param {String}  req.token           Token generated
  * 
  * @param {Object}   res                 response parameters
  * @param {Boolean}  res.success         The state of the response, either true or false
