@@ -12,9 +12,9 @@ exports.authenticateToken = (req,res,next) => {
     //Fetch the jwt access token from the request header
 
  try {
-    const token = req.headers['x-access-token'];
+    const token = req.headers['x-access-token'] || req.body.token || req.query.token;
     if (token == null) {
-        return res.status(401).send(
+        return res.status(403).json(
             {
                 auth:false,
                 message: 'No token provided'
@@ -22,17 +22,18 @@ exports.authenticateToken = (req,res,next) => {
         );
     }
 
-    jwt.verify(token,process.env.TOKEN_SECRET,(err,user)=>{
+    jwt.verify(token,process.env.TOKEN_SECRET,(err,decoded)=>{
         console.log(err);
         if (err) {
-            return res.status(403).send(
+            return res.status(401).json(
                 {
                     auth:false,
                     message:'Failed to authenticate token'
                 }
             );
         }
-        req.user = user;
+        console.log(decoded);
+        req.decoded = decoded;
         next();
     });
  } catch (error) {
@@ -62,7 +63,7 @@ exports.authCode = (length=5) => {
     return Math.random().toString(36).substring(2,length);
 }
 
-console.log(this.authCode());
+// console.log(this.authCode());
 /**
  * @name hasSameBrowser     Checks whether the user is logging with a different browser by comparing the 'User-Agent' header of the incoming request with the string saved in the user's profile array
  * @param {Object} request request object
