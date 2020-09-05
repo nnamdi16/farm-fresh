@@ -5,6 +5,13 @@
 const {Schema, model} = require("mongoose");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+
+const registrationStatus = Object.freeze(
+    {
+        Verified: 'VERIFIED',
+        Unverified: 'UNVERIFIED'
+    }
+);
  
 const UserSchema = new Schema({
     firstName: {
@@ -33,11 +40,18 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    registrationStatus: {
+        type:String,
+        enum:Object.values(registrationStatus),
+        default:registrationStatus.Unverified
+    }
 
 },  
  
 {timestamps:true} )
 
+
+Object.assign(UserSchema.statics, {registrationStatus});
 /**
  * Add pre-save hook
  */
