@@ -11,10 +11,19 @@ const {createProduct,updateProduct,getSellerProducts} = require('./product.servi
  * @function
  * 
  * @param {Object}  req                      request parameters
- * @param {String}  req.productTitle         Phone number of the User
+ * @param {String}  req.productTitle         Title of the product
  * @param {String}  req.quantityAvailable    Quantity of the product available
- * @param {String}  req.photoUpload          Password of the User
- * @param {String}  req.quantityAvailable    Password of the User
+ * @param {String}  req.photoUpload          Picture upload of the product
+ * @param {String}  req.description          Description of the product
+ * @param {String}  req.price                Price of the product
+ * @param {String}  req.quantityPerPrice     Quantity per price of the product
+ * @param {String}  req.location             Location of the seller
+ * @param {String}  req.currency             Currency
+ * @param {String}  req.productType          Type of product
+ * @param {String}  req.sizes                Sizes of the product
+ * @param {String}  req.additionalProperty   Further description of the product
+ * @param {String}  req.minimumOrderQuantity Minimum Quantity per order
+ * @param {String}  req.sellerId             Seller's UserId
  * 
  * @param {Object}   res             response parameters
  * @param {Boolean}  res.success     The state of the response, either true or false
