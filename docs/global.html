@@ -94,6 +94,242 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="authCode-Generatesverificationcode"><span class="type-signature"></span>authCode           - Generates verification code<span class="type-signature"></span></h4>
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_auth.js.html">util/auth.js</a>, <a href="util_auth.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="authenticationTokentoverifytoken"><span class="type-signature"></span>authenticationToken    to verify token<span class="type-signature"></span></h4>
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_auth.js.html">util/auth.js</a>, <a href="util_auth.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="generateAccessToken-ForGeneratingaccesstoken"><span class="type-signature"></span>generateAccessToken - For Generating access token<span class="type-signature"></span></h4>
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_auth.js.html">util/auth.js</a>, <a href="util_auth.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="hasSameBrowserCheckswhethertheuserisloggingwithadifferentbrowserbycomparingthe'User-Agent'headeroftheincomingrequestwiththestringsavedintheuser'sprofilearray"><span class="type-signature"></span>hasSameBrowser     Checks whether the user is logging with a different browser by comparing the 'User-Agent' header of the incoming request with the string saved in the user's profile array<span class="type-signature"></span></h4>
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_auth.js.html">util/auth.js</a>, <a href="util_auth.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -463,7 +699,460 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="user_user.controller.js.html">user/user.controller.js</a>, <a href="user_user.controller.js.html#line65">line 65</a>
+        <a href="user_user.controller.js.html">user/user.controller.js</a>, <a href="user_user.controller.js.html#line121">line 121</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="createProcessType"><span class="type-signature">(route) </span>createProcessType<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type"><a href="https://kisankranti.herokuapp.com/">https://kisankranti.herokuapp.com/</a></td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/processType/create</td>
+                            </tr>
+                            </table>
+                            This function creates a new Process type
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">req</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">request parameters</td>
+          </tr><tr>
+            <td class="name">req.processTypeId</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">ProcessTypeId</td>
+          </tr><tr>
+            <td class="name">req.description</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Description of the process type</td>
+          </tr><tr>
+            <td class="name">req.createdBy</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Name of the person who created the process</td>
+          </tr><tr>
+            <td class="name">req.updatedBy</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Name of the person who updated the process</td>
+          </tr><tr>
+            <td class="name">req.token</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Token generated</td>
+          </tr><tr>
+            <td class="name">res</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">response parameters</td>
+          </tr><tr>
+            <td class="name">res.success</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">The state of the response, either true or false</td>
+          </tr><tr>
+            <td class="name">res.message</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">A short message giving more information about the response.</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">request parameters
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>processTypeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ProcessTypeId</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Description of the process type</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>createdBy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the person who created the process</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>updatedBy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the person who updated the process</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>token</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Token generated</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">response parameters
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The state of the response, either true or false</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A short message giving more information about the response.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="process_process.controller.js.html">process/process.controller.js</a>, <a href="process_process.controller.js.html#line3">line 3</a>
     </li></ul></dd>
     
 
@@ -909,7 +1598,7 @@
             <td class="type">[object Object]</td>
             
             
-            <td class="description last">Phone number of the User</td>
+            <td class="description last">Title of the product</td>
           </tr><tr>
             <td class="name">req.quantityAvailable</td>
             <td class="type">[object Object]</td>
@@ -921,13 +1610,67 @@
             <td class="type">[object Object]</td>
             
             
-            <td class="description last">Password of the User</td>
+            <td class="description last">Picture upload of the product</td>
           </tr><tr>
-            <td class="name">req.quantityAvailable</td>
+            <td class="name">req.description</td>
             <td class="type">[object Object]</td>
             
             
-            <td class="description last">Password of the User</td>
+            <td class="description last">Description of the product</td>
+          </tr><tr>
+            <td class="name">req.price</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Price of the product</td>
+          </tr><tr>
+            <td class="name">req.quantityPerPrice</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Quantity per price of the product</td>
+          </tr><tr>
+            <td class="name">req.location</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Location of the seller</td>
+          </tr><tr>
+            <td class="name">req.currency</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Currency</td>
+          </tr><tr>
+            <td class="name">req.productType</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Type of product</td>
+          </tr><tr>
+            <td class="name">req.sizes</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Sizes of the product</td>
+          </tr><tr>
+            <td class="name">req.additionalProperty</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Further description of the product</td>
+          </tr><tr>
+            <td class="name">req.minimumOrderQuantity</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Minimum Quantity per order</td>
+          </tr><tr>
+            <td class="name">req.sellerId</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Seller's UserId</td>
           </tr><tr>
             <td class="name">res</td>
             <td class="type">[object Object]</td>
@@ -1047,7 +1790,7 @@
 
             
 
-            <td class="description last">Phone number of the User</td>
+            <td class="description last">Title of the product</td>
         </tr>
 
     
@@ -1093,14 +1836,14 @@
 
             
 
-            <td class="description last">Password of the User</td>
+            <td class="description last">Picture upload of the product</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>quantityAvailable</code></td>
+                <td class="name"><code>description</code></td>
             
 
             <td class="type">
@@ -1116,7 +1859,214 @@
 
             
 
-            <td class="description last">Password of the User</td>
+            <td class="description last">Description of the product</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>price</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Price of the product</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>quantityPerPrice</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Quantity per price of the product</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>location</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Location of the seller</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>currency</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Currency</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>productType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Type of product</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sizes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Sizes of the product</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>additionalProperty</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Further description of the product</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minimumOrderQuantity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Minimum Quantity per order</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sellerId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Seller's UserId</td>
         </tr>
 
     
@@ -1737,6 +2687,430 @@
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="registerUser"><span class="type-signature">(route) </span>registerUser<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type"><a href="https://kisankranti.herokuapp.com/">https://kisankranti.herokuapp.com/</a></td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/apiv1/register</td>
+                            </tr>
+                            </table>
+                            This function creates a new user.
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">req</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">request parameters</td>
+          </tr><tr>
+            <td class="name">req.firstName</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Firstname of the User</td>
+          </tr><tr>
+            <td class="name">req.lastName</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Lastname of the User</td>
+          </tr><tr>
+            <td class="name">req.phoneNumber</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Phone number of the User</td>
+          </tr><tr>
+            <td class="name">req.password</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">Password of the User</td>
+          </tr><tr>
+            <td class="name">res</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">response parameters</td>
+          </tr><tr>
+            <td class="name">res.success</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">The state of the response, either true or false</td>
+          </tr><tr>
+            <td class="name">res.message</td>
+            <td class="type">[object Object]</td>
+            
+            
+            <td class="description last">A short message giving more information about the response.</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">request parameters
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>firstName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Firstname of the User</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lastName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Lastname of the User</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>phoneNumber</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Phone number of the User</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Password of the User</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">response parameters
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The state of the response, either true or false</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A short message giving more information about the response.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="user_user.controller.js.html">user/user.controller.js</a>, <a href="user_user.controller.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -1752,13 +3126,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html">authenticateUser</a></li><li><a href="global.html">createProcessType</a></li><li><a href="global.html">createProduct</a></li><li><a href="global.html">registerUser</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#authCode-Generatesverificationcode">authCode           - Generates verification code</a></li><li><a href="global.html">authenticateUser</a></li><li><a href="global.html#authenticationTokentoverifytoken">authenticationToken    to verify token</a></li><li><a href="global.html">createProcessType</a></li><li><a href="global.html">createProduct</a></li><li><a href="global.html#generateAccessToken-ForGeneratingaccesstoken">generateAccessToken - For Generating access token</a></li><li><a href="global.html#hasSameBrowserCheckswhethertheuserisloggingwithadifferentbrowserbycomparingthe'User-Agent'headeroftheincomingrequestwiththestringsavedintheuser'sprofilearray">hasSameBrowser     Checks whether the user is logging with a different browser by comparing the 'User-Agent' header of the incoming request with the string saved in the user's profile array</a></li><li><a href="global.html">registerUser</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Mon Aug 31 2020 08:25:51 GMT+0100 (West Africa Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Sat Sep 05 2020 04:58:16 GMT+0100 (West Africa Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

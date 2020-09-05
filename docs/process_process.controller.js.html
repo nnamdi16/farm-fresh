@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: processType/processType.controller.js</title>
+    <title>JSDoc: Source: process/process.controller.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: processType/processType.controller.js</h1>
+    <h1 class="page-title">Source: process/process.controller.js</h1>
 
     
 
@@ -26,7 +26,7 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const {createProcessType} = require('./processType.service');
+            <pre class="prettyprint source linenums"><code>const {createProcess} = require('./process.service');
 
 /**
  *This function creates a new Process type
@@ -38,8 +38,11 @@
  * @function
  * 
  * @param {Object}  req                 request parameters
- * @param {String}  req.processTypeId   Process Type name
+ * @param {String}  req.processTypeId   ProcessTypeId
  * @param {String}  req.description     Description of the process type
+ * @param {String}  req.createdBy       Name of the person who created the process
+ * @param {String}  req.updatedBy       Name of the person who updated the process
+ * @param {String}  req.token           Token generated
  * 
  * @param {Object}   res                 response parameters
  * @param {Boolean}  res.success         The state of the response, either true or false
@@ -49,12 +52,12 @@
  * 
  * 
  */
-exports.createProcessType = async(req,res) => {
+exports.createProcess = async(req,res) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
         const requestParameters = req.body;
-        const processDetails = await createProcessType(requestParameters);
+        const processDetails = await createProcess(requestParameters);
         const {error,message} = processDetails;
         if (error) {
             return res.status(200).json(
@@ -70,7 +73,12 @@ exports.createProcessType = async(req,res) => {
             message
         });
     } catch (error) {
-        
+        res.status(500).json(
+            {
+                success:false,
+                message:error.message
+            }
+        )
     }
 }</code></pre>
         </article>
