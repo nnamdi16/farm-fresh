@@ -35,6 +35,8 @@ exports.registerUser = async(req,res) => {
         const {
             error,
             message,
+            userId,
+            token
         } = userDetails;
         if (error) {
             return res.status(200).json(
@@ -47,8 +49,10 @@ exports.registerUser = async(req,res) => {
         }
     
         res.status(200).send({
-            error,
-            message
+            success:error,
+            message,
+            userId,
+            token
         });
 
     } catch (error) {
