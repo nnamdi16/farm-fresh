@@ -13,7 +13,7 @@ const {createProduct,updateProduct,getSellerProducts} = require('./product.servi
  * @param {Object}  req                      request parameters
  * @param {String}  req.productTitle         Title of the product
  * @param {String}  req.quantityAvailable    Quantity of the product available
- * @param {String}  req.photoUpload          Picture upload of the product
+ * @param {String}  req.photoUpload          Picture upload of the product- base64 string
  * @param {String}  req.description          Description of the product
  * @param {String}  req.price                Price of the product
  * @param {String}  req.quantityPerPrice     Quantity per price of the product
