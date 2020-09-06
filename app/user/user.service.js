@@ -62,7 +62,7 @@ exports.registerUser = async function (data) {
     }
 }
 
-const verifyUnregisteredUser = async function (data, cb) {
+const verifyUnregisteredUser = async function (data) {
 try {
     const{processCode,userId} = data;
         const verifyUnregisteredUserResult = await ProcessSchema.findOneAndUpdate(
