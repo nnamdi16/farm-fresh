@@ -64,18 +64,16 @@ exports.registerUser = async(req,res) => {
 
 /**
  *This function creates a new user.
- * @name registerUser
+ * @name completeRegistration
  * 
- * @path {POST} /apiv1/register
+ * @path {POST} /apiv1/complete-registration
  * 
  * 
  * @function
  * 
- * @param {Object}  req             request parameters
- * @param {String}  req.firstName   Firstname of the User
- * @param {String}  req.lastName    Lastname of the User
- * @param {String}  req.phoneNumber Phone number of the User
- * @param {String}  req.password    Password of the User
+ * @param {Object}  req              request parameters
+ * @param {String}  req.processCode  OTP code
+ * @param {String}  req.userId       user's Id
  * 
  * @param {Object}  res             response parameters
  * @param {Boolean}  res.success     The state of the response, either true or false
