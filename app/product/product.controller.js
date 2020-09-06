@@ -90,7 +90,7 @@ exports.getSellerProducts = async(req,res) => {
         }
     
         res.status(200).send({
-            error,
+            success:!error,
             message
         });
     } catch (error) {

@@ -49,7 +49,7 @@ exports.registerUser = async(req,res) => {
         }
     
         res.status(200).send({
-            success:error,
+            success:!error,
             message,
             userId,
             token
@@ -99,14 +99,14 @@ exports.completeRegistration = async(req,res) => {
         if (error) {
             return res.status(200).json(
                 {
-                    success:!error,
+                    success:error,
                     message
                 }
             )
         }
         
         res.status(200).send({
-            success:true,
+            success:!error,
             data:userCompleteDetails
         });
 
