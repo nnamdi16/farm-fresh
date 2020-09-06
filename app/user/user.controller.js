@@ -76,8 +76,8 @@ exports.registerUser = async(req,res) => {
  * @function
  * 
  * @param {Object}  req              request parameters
- * @param {String}  req.processCode  OTP code
  * @param {String}  req.userId       user's Id
+ * @param {String}  req.processCode  OTP code
  * 
  * @param {Object}  res             response parameters
  * @param {Boolean}  res.success     The state of the response, either true or false
