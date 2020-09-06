@@ -3,10 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 /**
- * @name authenticationToken    to verify token
- * @param {Request} req         Header info - Token
- * @param {Response} res        Response 
- * @param {Next} next           Middleware to call the next function
+ * Token verification
  */
 exports.authenticateToken = (req,res,next) => {
     //Fetch the jwt access token from the request header
@@ -47,8 +44,7 @@ exports.authenticateToken = (req,res,next) => {
 }
 
 /**
- * @name generateAccessToken - For Generating access token
- * @param {String} userId User's Id
+ *  For Generating access token
  */
 
 exports.generateAccessToken =(userId)=> {
@@ -56,8 +52,7 @@ exports.generateAccessToken =(userId)=> {
 }
 
 /**
- * @name authCode           - Generates verification code
- * @param {Number} length  - Determines the verification length
+ * OTP code generation
  */
 exports.authCode = (length=5) => {
     return Math.random().toString(36).substring(2,length);
@@ -65,9 +60,7 @@ exports.authCode = (length=5) => {
 
 // console.log(this.authCode());
 /**
- * @name hasSameBrowser     Checks whether the user is logging with a different browser by comparing the 'User-Agent' header of the incoming request with the string saved in the user's profile array
- * @param {Object} request request object
- * @param {Object} browser browser object
+ * Checks whether the user is logging with a different browser by comparing the 'User-Agent' header of the incoming request with the string saved in the user's profile array
  */
 exports.hasSameBrowser = (request,browser) => {
     return browser.includes(request.header('User-Agent'))
