@@ -54,7 +54,8 @@ exports.registerUser = async function (data) {
         sendSMS(phoneNumber,verificationMessage);
         return {
             error: false,
-            message: `${firstName} successfully created ${otpCode}`,
+            userId,
+            message: `${firstName} account successfully created`,
             token
         }
     } catch (error) {

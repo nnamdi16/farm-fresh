@@ -36,6 +36,8 @@ exports.registerUser = async(req:Request,res:Response) => {
         const {
             error,
             message,
+            userId,
+            token
         } = userDetails;
         if (error) {
             return res.status(200).json(
@@ -48,8 +50,10 @@ exports.registerUser = async(req:Request,res:Response) => {
         }
     
         res.status(200).send({
-            error,
-            message
+            success:!error,
+            message,
+            userId,
+            token
         });
 
     } catch (error) {
@@ -73,8 +77,8 @@ exports.registerUser = async(req:Request,res:Response) => {
  * @function
  * 
  * @param {Object}  req              request parameters
- * @param {String}  req.processCode  OTP code
  * @param {String}  req.userId       user's Id
+ * @param {String}  req.processCode  OTP code
  * 
  * @param {Object}  res             response parameters
  * @param {Boolean}  res.success     The state of the response, either true or false
@@ -96,14 +100,14 @@ exports.completeRegistration = async(req:Request,res:Response) => {
         if (error) {
             return res.status(200).json(
                 {
-                    success:!error,
+                    success:error,
                     message
                 }
             )
         }
         
         res.status(200).send({
-            success:true,
+            success:!error,
             data:userCompleteDetails
         });
 
