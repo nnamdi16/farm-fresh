@@ -2,7 +2,7 @@
  * Module dependencies
  */
 
- const {Schema, model} = require("mongoose");
+import  {Schema, model} from "mongoose";
  
  const ProductSchema = new Schema({
      productTitle: {
@@ -75,7 +75,7 @@
      
  },
 
- {tumestamps:true}
+ {timestamps:true}
  )
 
  model("Product", ProductSchema);

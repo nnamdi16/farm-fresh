@@ -1,3 +1,4 @@
+import {Request,Response} from 'express';
 const {registerUser,authenticateUser,completeRegistration} = require("./user.service");
 
 
@@ -25,7 +26,7 @@ const {registerUser,authenticateUser,completeRegistration} = require("./user.ser
  * 
  */
 
-exports.registerUser = async(req,res) => {
+exports.registerUser = async(req:Request,res:Response) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
@@ -83,7 +84,7 @@ exports.registerUser = async(req,res) => {
  * 
  * 
  */
-exports.completeRegistration = async(req,res) => {
+exports.completeRegistration = async(req:Request,res:Response) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
@@ -138,7 +139,7 @@ exports.completeRegistration = async(req,res) => {
  * 
  * 
  */
-exports.authenticateUser = async(req,res) => {
+exports.authenticateUser = async(req:Request,res:Response) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
@@ -180,7 +181,7 @@ exports.authenticateUser = async(req,res) => {
 }
 
 
-exports.logoutUser = async(req,res) => {
+exports.logoutUser = async(req:Request,res:Response) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");

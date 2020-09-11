@@ -1,3 +1,4 @@
+import {Request,Response} from 'express';
 const {createProduct,updateProduct,getSellerProducts} = require('./product.service');
 
 
@@ -34,7 +35,7 @@ const {createProduct,updateProduct,getSellerProducts} = require('./product.servi
  * 
  * 
  */
-exports.createProduct = async(req,res) => {
+exports.createProduct = async(req:Request,res:Response) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
@@ -69,7 +70,7 @@ exports.createProduct = async(req,res) => {
     }
 }
 
-exports.getSellerProducts = async(req,res) => {
+exports.getSellerProducts = async(req:Request,res:Response) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
@@ -103,7 +104,7 @@ exports.getSellerProducts = async(req,res) => {
     }
 }
 
-exports.updateProduct = async(req,res) => {
+exports.updateProduct = async(req:Request,res:Response) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");

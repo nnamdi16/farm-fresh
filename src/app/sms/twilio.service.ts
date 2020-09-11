@@ -4,7 +4,7 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilio = require('twilio')(accountSid,authToken);
 
 console.log(accountSid,authToken);
-exports.sendSMS = (phone,message) => {
+exports.sendSMS = (phone:String,message:String) => {
    
     twilio.messages.create(
         {
@@ -16,6 +16,6 @@ exports.sendSMS = (phone,message) => {
     .then(message => console.log(message.sid))
 }
 
-exports.verifications = (phoneNumber, via) => {
+exports.verifications = (phoneNumber:String, via:String) => {
     return twilio.verify.services()
 }

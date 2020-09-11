@@ -1,3 +1,4 @@
+import {Request,Response} from 'express';
 const {createProcess} = require('./process.service');
 
 /**
@@ -24,7 +25,7 @@ const {createProcess} = require('./process.service');
  * 
  * 
  */
-exports.createProcess = async(req,res) => {
+exports.createProcess = async(req:Request,res:Response) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");

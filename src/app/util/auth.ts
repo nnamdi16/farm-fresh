@@ -1,11 +1,12 @@
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
 dotenv.config();
+import {Request,Response, NextFunction} from 'express'
 
 /**
  * Token verification
  */
-exports.authenticateToken = (req,res,next) => {
+exports.authenticateToken = (req:Request,res:Response,next:NextFunction) => {
     //Fetch the jwt access token from the request header
 
  try {

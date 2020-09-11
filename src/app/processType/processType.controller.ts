@@ -1,3 +1,4 @@
+import {Request,Response} from 'express';
 const {createProcessType} = require('./processType.service');
 
 /**
@@ -21,7 +22,7 @@ const {createProcessType} = require('./processType.service');
  * 
  * 
  */
-exports.createProcessType = async(req,res) => {
+exports.createProcessType = async(req:Request,res:Response) => {
     try {
         res.set("Content-Type", "application/json");
         res.set("Accept", "application/json");
