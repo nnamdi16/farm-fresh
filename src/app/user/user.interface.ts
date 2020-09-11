@@ -1,3 +1,9 @@
+enum RegistrationStatus {
+        Verified = 'VERIFIED',
+        Unverified = 'UNVERIFIED'
+}
+
+ 
 interface IUserSchema extends Document {
     firstName:string;
     middleName?:string;
@@ -5,5 +11,6 @@ interface IUserSchema extends Document {
     phoneNumber:string;
     role:string;
     password:string
+    registrationStatus:RegistrationStatus
 
 }
