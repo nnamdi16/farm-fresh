@@ -3,8 +3,10 @@
  */
 
 import {Schema, model, Document,Types,Query} from "mongoose";
+import {IUserSchema} from './user.interface';
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+
 
 const registrationStatus = Object.freeze(
     {
@@ -22,14 +24,18 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    middleName: {
+        type: String
+    },
     phoneNumber: {
         type: String,
         required: true,
+        unique:true,
         validate: {
-            validator: function (type:String) : RegExpMatchArray | null{
-                return type.match(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/);
+            validator: function (type:any) {
+                return type.match(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/)|| null;
             },
-            message:`Phone number doesn't match any India phone number format`
+            msg:`Phone number doesn't match any India phone number format`
         }
         
     },
@@ -44,11 +50,24 @@ const UserSchema = new Schema({
         type:String,
         enum:Object.values(registrationStatus),
         default:registrationStatus.Unverified
+    },
+
+    createdAt: {
+        type:Date,
+        required:false
+    },
+
+    modifiedAt: {
+        type:Date,
+        required:false
     }
 
 },  
  
-{timestamps:true} )
+).pre<IUserSchema>('save', function (next:any) {
+    this.isNew ? (this.createdAt = new Date()): (this.modifiedAt = new Date())
+    next();
+})
 
 
 Object.assign(UserSchema.statics, {registrationStatus});
@@ -72,6 +91,7 @@ Object.assign(UserSchema.statics, {registrationStatus});
      return match;
  }
 
- model("User",UserSchema);
+ export default model<IUserSchema>('User',UserSchema);
 
- module.exports = model("User");
+
+//  module.exports = model("User");
