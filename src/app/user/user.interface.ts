@@ -5,7 +5,7 @@ enum RegistrationStatus {
 }
 
  
-export interface IUserSchema extends Document {
+export interface IUser extends Document {
     firstName:string;
     middleName?:string;
     lastName:string;
