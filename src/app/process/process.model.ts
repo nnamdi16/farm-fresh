@@ -3,6 +3,8 @@
  */
 
  import {Schema, model} from 'mongoose';
+ import {IProcess}  from './process.interface';
+
 
  const processStatus = Object.freeze(
      {
@@ -16,15 +18,18 @@
      {
          processTypeId: {
              type:Schema.Types.ObjectId,
-             ref:"ProcessType"
+             ref:"ProcessType",
+             required:true
          },
          createdBy: {
              type:Schema.Types.ObjectId,
-             ref:"User"
+             ref:"User",
+             required:true
          },
          updatedBy: {
              type:Schema.Types.ObjectId,
-             ref:"User"
+             ref:"User",
+             required:true
          },
          processCode: {
              type:String
@@ -36,14 +41,25 @@
          },
          token: {
              type: String
-         }
+         },
+         createdAt: {
+            type:Date,
+            required:false
+        },
+    
+        modifiedAt: {
+            type:Date,
+            required:false
+        }
      },
 
-     {timestamps:true}
- )
+    //  {timestamps:true}
+ ).pre<IProcess>('save',function (next:any) {
+     this.isNew ? (this.createdAt = new Date()) :(this.modifiedAt=new Date());
+ })
 
  Object.assign(ProcessSchema.statics, {processStatus});
 
- model("Process", ProcessSchema);
+ export default model<IProcess>("Process", ProcessSchema);
 
- module.exports = model("Process");
+//  module.exports = model("Process");
