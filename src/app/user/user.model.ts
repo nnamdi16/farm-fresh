@@ -2,8 +2,8 @@
  * Module dependencies
  */
 
-import {Schema, model, Document,Types,Query} from "mongoose";
-import {IUserSchema} from './user.interface';
+import {Schema, model} from "mongoose";
+import {IUser} from './user.interface';
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -65,7 +65,7 @@ const UserSchema = new Schema({
 },  
  
 ).pre<IUserSchema>('save', function (next:any) {
-    this.isNew ? (this.createdAt = new Date()): (this.modifiedAt = new Date())
+    this.isNew ? (this.createdAt = new Date()): (this.modifiedAt = new Date());
     next();
 })
 
@@ -91,7 +91,7 @@ Object.assign(UserSchema.statics, {registrationStatus});
      return match;
  }
 
- export default model<IUserSchema>('User',UserSchema);
+ export default model<IUser>('User',UserSchema);
 
 
 //  module.exports = model("User");
