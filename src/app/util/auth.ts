@@ -10,7 +10,7 @@ exports.authenticateToken = (req:Request,res:Response,next:NextFunction) => {
     //Fetch the jwt access token from the request header
 
  try {
-    const token = req.headers['x-access-token'] || req.body.token || req.query.token;
+    const token = <string>req.headers['x-access-token'] || req.body.token || req.query.token;
     if (token == null) {
         return res.status(403).json(
             {
@@ -20,7 +20,7 @@ exports.authenticateToken = (req:Request,res:Response,next:NextFunction) => {
         );
     }
 
-    jwt.verify(token,process.env.TOKEN_SECRET,(err,decoded)=>{
+    jwt.verify(token,process.env.TOKEN_SECRET,(err:any,decoded:boolean)=>{
         console.log(err);
         if (err) {
             return res.status(401).json(
@@ -31,7 +31,6 @@ exports.authenticateToken = (req:Request,res:Response,next:NextFunction) => {
             );
         }
         console.log(decoded);
-        req.decoded = decoded;
         next();
     });
  } catch (error) {
@@ -48,7 +47,7 @@ exports.authenticateToken = (req:Request,res:Response,next:NextFunction) => {
  *  For Generating access token
  */
 
-exports.generateAccessToken =(userId)=> {
+exports.generateAccessToken =(userId:string)=> {
     return jwt.sign({userId},process.env.TOKEN_SECRET, {expiresIn:'60s'});
 }
 
@@ -63,6 +62,6 @@ exports.authCode = (length=5) => {
 /**
  * Checks whether the user is logging with a different browser by comparing the 'User-Agent' header of the incoming request with the string saved in the user's profile array
  */
-exports.hasSameBrowser = (request,browser) => {
+exports.hasSameBrowser = (request:Request,browser:any) => {
     return browser.includes(request.header('User-Agent'))
 }
