@@ -1,4 +1,5 @@
 import {Schema, model } from "mongoose";
+import { IProcessType } from "./processType.interface";
 
 const ProcessTypeSchema = new Schema(
     {
@@ -13,5 +14,5 @@ const ProcessTypeSchema = new Schema(
     }
 )
 
-model("ProcessType",ProcessTypeSchema);
-module.exports = model("ProcessType");
+export default model<IProcessType>("ProcessType",ProcessTypeSchema);
+// module.exports = model("ProcessType");
