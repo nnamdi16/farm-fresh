@@ -3,6 +3,7 @@
  */
 
 import  {Schema, model} from "mongoose";
+import { IProduct } from "./product.interface";
  
  const ProductSchema = new Schema({
      productTitle: {
@@ -11,7 +12,7 @@ import  {Schema, model} from "mongoose";
      },
 
      quantityAvailable: {
-         type: String,
+         type: Number,
          required:true
      },
 
@@ -69,14 +70,20 @@ import  {Schema, model} from "mongoose";
     sellerId: {
         type: Schema.Types.ObjectId,
         ref:"User"
+    },
+    createdAt: {
+        type:Date,
+        required:false
+    },
+    modifiedAt: {
+        type:Date,
+        required:false
     }
      
+   }
+ ).pre<IProduct>('save', function (next:any) {
+    this.isNew ? (this.createdAt = new Date()) :(this.modifiedAt=new Date());
+ })
 
-     
- },
-
- {timestamps:true}
- )
-
- model("Product", ProductSchema);
- module.exports = model("Product");
+ export default model<IProduct>("Product", ProductSchema);
+//  module.exports = model("Product");
