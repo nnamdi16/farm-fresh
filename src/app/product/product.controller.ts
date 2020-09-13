@@ -64,7 +64,7 @@ exports.createProduct = async(req:Request,res:Response) => {
         res.status(500).json(
             {
                 success: error,
-                message
+                message:error.message
             }
         )
     }
