@@ -1,12 +1,18 @@
+import { IUser } from "user/user.interface";
+
 require("dotenv").config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const twilio = require('twilio')(accountSid,authToken);
+import twilio from 'twilio';
+import * as TwilioClient from 'twilio/lib/rest/Twilio';
+const client: TwilioClient = twilio(accountSid, authToken);
+
+// const twilio = require('twilio')(accountSid,authToken);
 
 console.log(accountSid,authToken);
-exports.sendSMS = (phone:String,message:String) => {
+exports.sendSMS = (phone:string,message:any) => {
    
-    twilio.messages.create(
+    client.messages.create(
         {
             body: message,
             from:process.env.TWILIO_PHONE_NUMBER,
@@ -16,6 +22,6 @@ exports.sendSMS = (phone:String,message:String) => {
     .then(message => console.log(message.sid))
 }
 
-exports.verifications = (phoneNumber:String, via:String) => {
-    return twilio.verify.services()
-}
+// exports.verifications = (phoneNumber:String, via:String) => {
+//     return client.verify.services()
+// }
