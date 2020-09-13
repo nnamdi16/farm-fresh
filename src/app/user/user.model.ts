@@ -64,7 +64,7 @@ const UserSchema = new Schema({
 
 },  
  
-).pre<IUserSchema>('save', function (next:any) {
+).pre<IUser>('save', function (next:any) {
     this.isNew ? (this.createdAt = new Date()): (this.modifiedAt = new Date());
     next();
 })
