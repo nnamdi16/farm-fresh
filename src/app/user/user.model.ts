@@ -15,7 +15,7 @@ const registrationStatus = Object.freeze(
     }
 );
  
-const UserSchema = new Schema({
+const UserSchema : Schema = new Schema({
     firstName: {
         type: String,
         required: true

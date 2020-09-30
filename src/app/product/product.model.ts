@@ -5,7 +5,7 @@
 import  {Schema, model} from "mongoose";
 import { IProduct } from "./product.interface";
  
- const ProductSchema = new Schema({
+ const ProductSchema:Schema = new Schema({
      productTitle: {
          type: String,
          required: true

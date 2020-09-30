@@ -1,7 +1,7 @@
 import {Schema, model } from "mongoose";
 import { IProcessType } from "./processType.interface";
 
-const ProcessTypeSchema = new Schema(
+const ProcessTypeSchema:Schema = new Schema(
     {
         processTypeId: {
             type:String,

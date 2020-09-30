@@ -14,7 +14,7 @@
      }
  )
  
- const ProcessSchema = new Schema(
+ const ProcessSchema:Schema = new Schema(
      {
          processTypeId: {
              type:Schema.Types.ObjectId,

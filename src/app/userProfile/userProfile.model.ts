@@ -1,9 +1,10 @@
+import { Schema } from "mongoose";
+
 /**
  * Module Dependencies
  */
-const {Schema, model} = require("mongoose");
 
-const UserProfileSchema = new Schema({
+const UserProfileSchema:Schema = new Schema({
     address: {
         type:String,
         required:true
