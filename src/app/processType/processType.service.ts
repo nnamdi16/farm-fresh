@@ -1,7 +1,9 @@
+import { IProcessType } from "./processType.interface";
+
 const ProcessTypeSchema = require('./processType.model');
 
 
-exports.createProcessType = async function (data) {
+exports.createProcessType = async function (data:IProcessType) {
     try {
         const {processTypeId, description} = data;
         const createProcessTypeObject= new ProcessTypeSchema(
