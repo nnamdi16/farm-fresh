@@ -1,6 +1,8 @@
+import { IProduct } from "./product.interface";
+
 const ProductSchema = require('./product.model');
 
-exports.createProduct = async function (data) {
+exports.createProduct = async function (data:IProduct) {
     try {
         const {productTitle,
             quantityAvailable,
@@ -50,14 +52,18 @@ exports.createProduct = async function (data) {
     }
 }
 
-exports.updateProduct = async function (data) {
+interface IProductObject {
+    [key:string] : string 
+}
+
+exports.updateProduct = async function (data:IProduct) {
     try {
         const {sellerId, _id} = data;
-        const updateObject = Object.keys(data).reduce((object,key) => {
-            console.log(key !== "_id" || key !=="sellerId");
-            if (key !== "_id" || key !=="sellerId") {
+        const updateObject = Object.keys(data).reduce((object:IProductObject,key) => {
+            console.log(key !== "_id" || "sellerId");
+            if (key !== "_id" || "sellerId") {
                 console.log(key);
-                object[key] = data[key];
+                object[key] = (<IProduct>data)[key];
             }
             return object;
         }, {});
@@ -68,7 +74,7 @@ exports.updateProduct = async function (data) {
          * Constructing dynamic query
          */
         for (let index = 0; index < entries.length; index++) {
-            productUpdate[entries[index]] = Object.values(updateObject)[index];   
+            (<IProduct>productUpdate)[entries[index]] = Object.values(updateObject)[index];   
         }
         const updateProduct =  await ProductSchema.update(
             {
@@ -98,7 +104,7 @@ exports.updateProduct = async function (data) {
     }
 }
 
-exports.getSellerProducts = async function (data) {
+exports.getSellerProducts = async function (data:IProduct) {
  try {
      const sellerId = data
     const fetchAllProducts = await ProductSchema.find({sellerId}).exec();
