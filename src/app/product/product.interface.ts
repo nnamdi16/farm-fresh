@@ -17,6 +17,7 @@ export interface IProduct extends Document {
     minimumOrderQuantity?:string,
     sellerId:IUser['_id'],
     createdAt:Date,
-    modifiedAt:Date
+    modifiedAt:Date,
+    [propName:string]:string | number | Date | any
 
 }
