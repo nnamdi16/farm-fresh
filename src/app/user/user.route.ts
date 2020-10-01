@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
 const UserController = require('./user.controller');
-const {registerUser,authenticateUser,logoutUser,completeRegistration} = UserController;
+const {registerUser, authenticateUser, logoutUser, completeRegistration} = UserController;
 
 /**
  * @path {POST} /apiv1/register

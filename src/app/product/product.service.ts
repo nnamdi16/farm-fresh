@@ -1,10 +1,11 @@
-import { IProduct } from "./product.interface";
+import {IProduct} from "./product.interface";
 
 const ProductSchema = require('./product.model');
 
-exports.createProduct = async function (data:IProduct) {
+exports.createProduct = async function (data: IProduct) {
     try {
-        const {productTitle,
+        const {
+            productTitle,
             quantityAvailable,
             photoUpload,
             description,
@@ -15,7 +16,7 @@ exports.createProduct = async function (data:IProduct) {
             productType,
             sizes,
             additionalProperty,
-            minimumOrderQuantity, 
+            minimumOrderQuantity,
             sellerId
         } = data;
         const createProduct = new ProductSchema({
@@ -44,7 +45,7 @@ exports.createProduct = async function (data:IProduct) {
         await createProduct.save();
         return {
             error: false,
-            message:`${productTitle} successfully created`
+            message: `${productTitle} successfully created`
         }
 
     } catch (error) {
@@ -53,13 +54,13 @@ exports.createProduct = async function (data:IProduct) {
 }
 
 interface IProductObject {
-    [key:string] : string 
+    [key: string]: string
 }
 
-exports.updateProduct = async function (data:IProduct) {
+exports.updateProduct = async function (data: IProduct) {
     try {
         const {sellerId, _id} = data;
-        const updateObject = Object.keys(data).reduce((object:IProductObject,key) => {
+        const updateObject = Object.keys(data).reduce((object: IProductObject, key) => {
             console.log(key !== "_id" || "sellerId");
             if (key !== "_id" || "sellerId") {
                 console.log(key);
@@ -74,16 +75,16 @@ exports.updateProduct = async function (data:IProduct) {
          * Constructing dynamic query
          */
         for (let index = 0; index < entries.length; index++) {
-            (<IProduct>productUpdate)[entries[index]] = Object.values(updateObject)[index];   
+            (<IProduct>productUpdate)[entries[index]] = Object.values(updateObject)[index];
         }
-        const updateProduct =  await ProductSchema.update(
+        const updateProduct = await ProductSchema.update(
             {
                 _id,
                 sellerId
             },
             {
-                $set:productUpdate,
-                $currentDate: { lastModified: true }
+                $set: productUpdate,
+                $currentDate: {lastModified: true}
             }
         );
 
@@ -96,7 +97,7 @@ exports.updateProduct = async function (data:IProduct) {
 
         return {
             error: true,
-            message:`Product not updated`
+            message: `Product not updated`
         }
 
     } catch (error) {
@@ -104,24 +105,24 @@ exports.updateProduct = async function (data:IProduct) {
     }
 }
 
-exports.getSellerProducts = async function (data:IProduct) {
- try {
-     const sellerId = data
-    const fetchAllProducts = await ProductSchema.find({sellerId}).exec();
-    if (fetchAllProducts) {
-        return {
-            error: false,
-            message: fetchAllProducts
+exports.getSellerProducts = async function (data: IProduct) {
+    try {
+        const sellerId = data
+        const fetchAllProducts = await ProductSchema.find({sellerId}).exec();
+        if (fetchAllProducts) {
+            return {
+                error: false,
+                message: fetchAllProducts
+            }
         }
-    }
 
-    return {
-        error: true,
-        message: `Error fetching all products`
+        return {
+            error: true,
+            message: `Error fetching all products`
+        }
+    } catch (error) {
+        throw new Error(error);
     }
- } catch (error) {
-     throw new Error(error);
- }
 }
 
 

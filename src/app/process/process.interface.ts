@@ -12,9 +12,9 @@ export interface IProcess extends Document {
     processTypeId: IProcessType['_id'],
     createdBy: IUser['_id'],
     updatedBy: IUser['_id'],
-    processCode:string,
-    processStatus:ProcessStatus,
-    token:string,
-    createdAt:Date,
-    modifiedAt:Date
+    processCode: string,
+    processStatus: ProcessStatus,
+    token: string,
+    createdAt: Date,
+    modifiedAt: Date
 }

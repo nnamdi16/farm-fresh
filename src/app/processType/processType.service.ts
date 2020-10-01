@@ -1,12 +1,12 @@
-import { IProcessType } from "./processType.interface";
+import {IProcessType} from "./processType.interface";
 
 const ProcessTypeSchema = require('./processType.model');
 
 
-exports.createProcessType = async function (data:IProcessType) {
+exports.createProcessType = async function (data: IProcessType) {
     try {
         const {processTypeId, description} = data;
-        const createProcessTypeObject= new ProcessTypeSchema(
+        const createProcessTypeObject = new ProcessTypeSchema(
             {
                 processTypeId,
                 description
@@ -16,10 +16,10 @@ exports.createProcessType = async function (data:IProcessType) {
             processTypeId
         });
         if (checkExistingProcessType) {
-           return {
-               error: true,
-               message: `ProcessType already exist`
-           }; 
+            return {
+                error: true,
+                message: `ProcessType already exist`
+            };
         }
         await createProcessTypeObject.save();
         return {
@@ -27,6 +27,6 @@ exports.createProcessType = async function (data:IProcessType) {
             message: `${processTypeId} successfully created`
         }
     } catch (error) {
-        
+
     }
 }

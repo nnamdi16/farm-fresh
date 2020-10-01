@@ -1,4 +1,5 @@
 import {Router} from 'express';
+
 const router = Router();
 const ProcessTypeController = require('./processType.controller');
 const {createProcessType} = ProcessTypeController;
@@ -8,4 +9,4 @@ const {createProcessType} = ProcessTypeController;
  */
 router.route('/create').post(createProcessType);
 
-module.exports =  router;
+module.exports = router;
