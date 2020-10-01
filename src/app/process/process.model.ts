@@ -2,7 +2,7 @@
  * Module dependencies
  */
 
-import {Schema, model} from 'mongoose';
+import {Schema, model, Document} from 'mongoose';
 import {IProcess} from './process.interface';
 
 
@@ -60,6 +60,6 @@ const ProcessSchema: Schema = new Schema(
 
 Object.assign(ProcessSchema.statics, {processStatus});
 
-export default model<IProcess>("Process", ProcessSchema);
+export default model<IProcess & Document>("Process", ProcessSchema);
 
 //  module.exports = model("Process");
