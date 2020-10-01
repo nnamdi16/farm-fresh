@@ -1,3 +1,6 @@
+import { IProcess } from "process/process.interface";
+import { IUser } from "./user.interface";
+
 const UserSchema = require('./user.model');
 const {sendSMS} = require('../sms/twilio.service');
 const {generateAccessToken,authenticateToken,authCode} = require('../util/auth');
@@ -12,7 +15,7 @@ const{processStatus} =ProcessSchema;
 
 
 
-exports.registerUser = async function (data) {
+exports.registerUser = async function (data:IUser) {
     try {
         const {firstName,lastName,phoneNumber,password} = data;
         const createUser = new UserSchema({
@@ -63,13 +66,13 @@ exports.registerUser = async function (data) {
     }
 }
 
-const verifyUnregisteredUser = async function (data) {
+const verifyUnregisteredUser = async function (data: IProcess | any) {
 try {
     const{processCode,userId} = data;
         const verifyUnregisteredUserResult = await ProcessSchema.findOneAndUpdate(
             {createdBy:userId,processCode}, 
             {processStatus:processStatus.Success}, {new:true},
-            function (err,result) {
+            function (err:any,result:IUser) {
                 if (err) {
                     return {
                         error:true,
@@ -99,7 +102,7 @@ try {
     
 }
 
-const updateCustomerStatus = async function (data) {
+const updateCustomerStatus = async function (data:IProcess | any) {
    try {
     const{userId,processCode} = data;
     const checkProcessStatus = await ProcessSchema.findOne({createdBy:userId,processCode});
@@ -124,7 +127,7 @@ const updateCustomerStatus = async function (data) {
             {_id:userId},
             {registrationStatus:status.Verified},
             {new:true},
-            function (err,result) {
+            function (err:any,result:IUser) {
                 if (err) {
                     return {
                         error:true,
@@ -155,7 +158,7 @@ const updateCustomerStatus = async function (data) {
    }
 }
 
-exports.completeRegistration = async function (data) {
+exports.completeRegistration = async function (data:IProcess | IUser) {
     try {
            const [updateProcess,customerInfo] = await Promise.all([verifyUnregisteredUser(data),updateCustomerStatus(data)]) ;
             console.log(updateProcess);
@@ -179,7 +182,7 @@ exports.completeRegistration = async function (data) {
     }
 }
 
-exports.authenticateUser = async function (data) {
+exports.authenticateUser = async function (data:IUser) {
     try {
         const {phoneNumber,password} = data;
         const userInfo = await UserSchema.findOne({
